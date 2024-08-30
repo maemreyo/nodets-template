@@ -12,7 +12,11 @@
     "watch": "tsc --watch",
     "clean": "rm -rf dist",
     "prepare": "npm run build",
-    "release": "node scripts/release.js"
+    "release": "node scripts/release.js",
+    "lint": "eslint 'src/**/*.ts'",
+    "format": "prettier --write 'src/**/*.ts'",
+    "docs": "typedoc",
+    "prepare:husky": "husky install"
   },
   "standard-version": {
     "preset": "angular"
@@ -28,8 +32,17 @@
   },
   "devDependencies": {
     "@types/node": "^20.16.2",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
     "standard-version": "^9.5.0",
     "ts-node": "^10.9.2",
+    "typedoc": "^0.26.6",
     "typescript": "^4.9.5"
   },
   "files": [
@@ -37,5 +50,12 @@
   ],
   "engines": {
     "node": ">=12.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write",
+      "tsc --noEmit"
+    ]
   }
 }
