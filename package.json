@@ -1,0 +1,41 @@
+{
+  "name": "nodets_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "release": "node scripts/release.js"
+  },
+  "standard-version": {
+    "preset": "angular"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Matthew Ngo <matthew.ngo1114@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.2",
+    "standard-version": "^9.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
