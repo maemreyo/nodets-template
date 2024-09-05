@@ -27,9 +27,7 @@
       "prettier --write",
       "tsc --noEmit"
     ],
-    "**/*.{js,json,md}": [
-      "prettier --write"
-    ]
+    "!dist/**/*": "echo Ignored"
   },
   "keywords": [
     "typescript",
